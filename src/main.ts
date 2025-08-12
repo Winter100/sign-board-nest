@@ -26,6 +26,15 @@ async function bootstrap() {
     },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'X-Requested-With',
+      'X-HTTP-Method-Override',
+      'X-Forwarded-Proto',
+      'X-Forwarded-For',
+      'X-Forwarded-Port',
+    ],
   }
   app.enableCors(corsOptions)
   app.setGlobalPrefix('api/v1')
